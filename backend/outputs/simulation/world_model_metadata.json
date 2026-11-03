@@ -1,0 +1,61 @@
+{
+  "architecture": "shared MLP state encoder + GRU recurrent dynamics + state decoder",
+  "latent_size": 24,
+  "training_source": "Gaia simulator rollouts only; not real factory observations",
+  "sequence_count": {
+    "train": 22,
+    "validation": 4,
+    "test": 4
+  },
+  "episodes": {
+    "train": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      17,
+      18,
+      19,
+      20,
+      23,
+      26,
+      27,
+      28
+    ],
+    "validation": [
+      5,
+      21,
+      22,
+      24
+    ],
+    "test": [
+      7,
+      16,
+      25,
+      29
+    ]
+  },
+  "validation_normalized_mse": 0.216434046626091,
+  "held_out_episode_mae": 0.07500368356704712,
+  "held_out_mae_by_state": {
+    "health": 0.02204318903386593,
+    "backlog": 0.18415510654449463,
+    "energy_price": 0.07384077459573746,
+    "carbon_intensity": 0.06714370101690292,
+    "workload": 0.07572972029447556,
+    "edge_load": 0.04748307541012764,
+    "time_fraction": 0.05463014915585518
+  },
+  "training_epochs": 80,
+  "warning": "This is a simulator-only world-model prototype; policies do not yet act on its predictions."
+}

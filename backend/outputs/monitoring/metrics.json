@@ -1,0 +1,52 @@
+{
+  "task": "unsupervised minute-level operational anomaly screening",
+  "source": {
+    "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\Smart-Manufacturing-Dataset-0.1.0.zip",
+    "nested_archive": "uwicore-Smart-Manufacturing-Dataset-cffb0ac/Smart-Manufacturing-Dataset.zip",
+    "source_files": {
+      "data_communications.csv": {
+        "rows": 12757920,
+        "bytes": 1282317658
+      },
+      "data_position.csv": {
+        "rows": 832930,
+        "bytes": 74716781
+      },
+      "data_states.csv": {
+        "rows": 213056,
+        "bytes": 8853777
+      }
+    },
+    "minute_rows": 1143,
+    "timestamp_start_seconds": 0,
+    "timestamp_end_seconds": 68520,
+    "message_latency_is_requirement_not_observed_latency": true,
+    "labels_available": false
+  },
+  "feature_columns": [
+    "message_count",
+    "payload_total",
+    "aperiodic_message_count",
+    "position_event_count",
+    "state_event_count",
+    "blocked_state_events",
+    "busy_state_events",
+    "latency_requirement_ms_mean",
+    "reliability_requirement_pct_mean",
+    "mean_position_x_mm",
+    "mean_position_y_mm"
+  ],
+  "split": {
+    "strategy": "strict chronological 70/15/15; model fit on training period only",
+    "train_rows": 800,
+    "validation_rows": 171,
+    "test_rows": 172,
+    "train_end_minute": 799,
+    "validation_end_minute": 970
+  },
+  "threshold": 0.09491031413557768,
+  "validation_screened_fraction": 0.011695906432748537,
+  "test_screened_count": 5,
+  "test_screened_fraction": 0.029069767441860465,
+  "interpretation": "Unsupervised screening score, not a fault diagnosis or supervised anomaly accuracy; no ground-truth fault labels are present."
+}

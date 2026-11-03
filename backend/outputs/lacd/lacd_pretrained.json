@@ -1,0 +1,117 @@
+{
+  "meta": {
+    "pretrain_episodes": 100,
+    "seeds": [
+      20000,
+      20099
+    ],
+    "conditions": "alternating default / zema_prior"
+  },
+  "agents": [
+    {
+      "id": "energy",
+      "weights": {
+        "kwh": 2.0,
+        "cost": 1.9937244375864973,
+        "carbonKg": 1.0079434571960473,
+        "downtime": 0.038000000000000006,
+        "healthDeficit": 1.5804454713840292,
+        "missed": 1.6946449891538762,
+        "throughput": 0.1960224013767081,
+        "latency": 0.45896249565662817
+      },
+      "trust": {
+        "energy": 1.0,
+        "carbon": 0.6761360801988431,
+        "maintenance": 0.8130372822395572,
+        "production": 0.7407298843166986,
+        "orchestration": 0.6
+      },
+      "influence": 0.9256340523112757
+    },
+    {
+      "id": "carbon",
+      "weights": {
+        "kwh": 0.04999999999993668,
+        "cost": 0.7476184606527747,
+        "carbonKg": 2.0,
+        "downtime": 0.038000000000000006,
+        "healthDeficit": 1.5804454713840292,
+        "missed": 1.6946449891538762,
+        "throughput": 0.1960224013767081,
+        "latency": 0.45896249565662817
+      },
+      "trust": {
+        "energy": 0.9256340523112757,
+        "carbon": 1.0,
+        "maintenance": 0.8130372822395572,
+        "production": 0.7407298843166986,
+        "orchestration": 0.6
+      },
+      "influence": 0.6761360801988431
+    },
+    {
+      "id": "maintenance",
+      "weights": {
+        "kwh": 0.04999999999993668,
+        "cost": 0.7476184606527747,
+        "carbonKg": 1.0079434571960473,
+        "downtime": 2.0,
+        "healthDeficit": 2.0,
+        "missed": 1.6946449891538762,
+        "throughput": 0.1960224013767081,
+        "latency": 0.45896249565662817
+      },
+      "trust": {
+        "energy": 0.9256340523112757,
+        "carbon": 0.6761360801988431,
+        "maintenance": 1.0,
+        "production": 0.7407298843166986,
+        "orchestration": 0.6
+      },
+      "influence": 0.8130372822395572
+    },
+    {
+      "id": "production",
+      "weights": {
+        "kwh": 0.04999999999993668,
+        "cost": 0.7476184606527747,
+        "carbonKg": 1.0079434571960473,
+        "downtime": 0.038000000000000006,
+        "healthDeficit": 1.5804454713840292,
+        "missed": 2.0,
+        "throughput": 2.0,
+        "latency": 0.45896249565662817
+      },
+      "trust": {
+        "energy": 0.9256340523112757,
+        "carbon": 0.6761360801988431,
+        "maintenance": 0.8130372822395572,
+        "production": 1.0,
+        "orchestration": 0.6
+      },
+      "influence": 0.7407298843166986
+    },
+    {
+      "id": "orchestration",
+      "weights": {
+        "kwh": 0.19999999999994128,
+        "cost": 0.7476184606527747,
+        "carbonKg": 1.157943457196046,
+        "downtime": 0.038000000000000006,
+        "healthDeficit": 1.5804454713840292,
+        "missed": 1.6946449891538762,
+        "throughput": 0.1960224013767081,
+        "latency": 1.9946450832947855
+      },
+      "trust": {
+        "energy": 0.9256340523112757,
+        "carbon": 0.6761360801988431,
+        "maintenance": 0.8130372822395572,
+        "production": 0.7407298843166986,
+        "orchestration": 1.0
+      },
+      "influence": 0.6
+    }
+  ]
+}

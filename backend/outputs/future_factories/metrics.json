@@ -1,0 +1,171 @@
+{
+  "task": "Future Factories assembly-description classification",
+  "target": "Description (non-empty records only)",
+  "dataset": {
+    "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\archive (15).zip",
+    "source_files": [
+      "Analog Dataset/Conveyor_Signals.csv",
+      "Analog Dataset/FFCell_CycleManagement.csv",
+      "Analog Dataset/FFCell_SafetyManagement.csv",
+      "Analog Dataset/R01_Data.csv",
+      "Analog Dataset/R02_Data.csv",
+      "Analog Dataset/R03_Data.csv",
+      "Analog Dataset/R04_Data.csv"
+    ],
+    "rows_total": 974836,
+    "rows_labeled": 492728,
+    "rows_unlabeled": 482108,
+    "rows_used": 10000,
+    "features": 230,
+    "class_counts": {
+      "NoNose": 177711,
+      "NoNose,NoBody2": 153851,
+      "NoNose,NoBody2,NoBody1": 161166
+    },
+    "timestamp_start": "2023-12-11 13:04:12.348000+00:00",
+    "timestamp_end": "2023-12-12 18:07:42.283000+00:00",
+    "join_validation": "exact _time and Description match for each source file",
+    "split_group_rows": 8192,
+    "window_size": 5
+  },
+  "split": {
+    "strategy": "StratifiedGroupKFold over contiguous 8192-row source blocks; 80/10/10",
+    "seed": 42,
+    "train_rows": 7840,
+    "validation_rows": 1162,
+    "test_rows": 998,
+    "train_groups": [
+      8,
+      10,
+      11,
+      12,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      22,
+      24,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      43,
+      44,
+      47,
+      48,
+      49,
+      50,
+      52,
+      54,
+      55,
+      58,
+      59,
+      60,
+      110,
+      111,
+      112,
+      113,
+      114,
+      115,
+      116,
+      117,
+      118
+    ],
+    "validation_groups": [
+      13,
+      25,
+      33,
+      42,
+      45,
+      51,
+      53
+    ],
+    "test_groups": [
+      9,
+      21,
+      23,
+      46,
+      56,
+      57
+    ]
+  },
+  "validation": {
+    "accuracy": 1.0,
+    "macro_f1": 1.0
+  },
+  "test": {
+    "accuracy": 0.8306613226452906,
+    "macro_f1": 0.6918351723243275,
+    "classification_report": {
+      "NoNose": {
+        "precision": 0.6349892008639308,
+        "recall": 1.0,
+        "f1-score": 0.7767503302509907,
+        "support": 294.0
+      },
+      "NoNose,NoBody2": {
+        "precision": 1.0,
+        "recall": 0.17560975609756097,
+        "f1-score": 0.2987551867219917,
+        "support": 205.0
+      },
+      "NoNose,NoBody2,NoBody1": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1-score": 1.0,
+        "support": 499.0
+      },
+      "accuracy": 0.8306613226452906,
+      "macro avg": {
+        "precision": 0.8783297336213103,
+        "recall": 0.7252032520325203,
+        "f1-score": 0.6918351723243275,
+        "support": 998.0
+      },
+      "weighted avg": {
+        "precision": 0.892471768591178,
+        "recall": 0.8306613226452906,
+        "f1-score": 0.7901897899517031,
+        "support": 998.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        294,
+        0,
+        0
+      ],
+      [
+        169,
+        36,
+        0
+      ],
+      [
+        0,
+        0,
+        499
+      ]
+    ],
+    "labels": [
+      "NoNose",
+      "NoNose,NoBody2",
+      "NoNose,NoBody2,NoBody1"
+    ]
+  },
+  "normalization": "Median imputation and StandardScaler fitted only on training groups.",
+  "unlabeled_rows": "Excluded; blank Description is not treated as normal operation."
+}

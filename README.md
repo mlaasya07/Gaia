@@ -77,9 +77,3 @@ streamlit run streamlit_app.py  # backend dashboards
 - [ARCHITECTURE.md](ARCHITECTURE.md): the rules to follow when changing the code.
 - [BUGS.md](BUGS.md): bugs found and fixed, and known limitations.
 - [CHANGELOG.md](CHANGELOG.md): version history.
-
-
-## Contributors
-- M Laasya (@mlaasya07) - 23XV1M6729
-- Chaitanya K (@Chaitanya-kandagaddala-2006) - 23XV1M6717
-- S Abhishek Naidu (@AbhishekNaidu0104) - 23XV1M6751

@@ -1,0 +1,13 @@
+{
+  "episodes": 100,
+  "pretrain_episodes": 100,
+  "horizon": 96,
+  "eval_seeds": [
+    10000,
+    10099
+  ],
+  "pretrain_seeds": [
+    20000,
+    20099
+  ]
+}

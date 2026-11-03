@@ -1,0 +1,71 @@
+{
+  "task": "one-minute-ahead mean active power forecasting",
+  "target": "target_next_minute_kw",
+  "dataset": {
+    "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\hipe_cleaned_v1.0.1_geq_2017-10-23_lt_2017-10-30.zip",
+    "source_files": [
+      "ChipPress_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "ChipSaw_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "HighTemperatureOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "MainTerminal_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "PickAndPlaceUnit_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+      "ScreenPrinter_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+      "SolderingOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "VacuumOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "VacuumPump1_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+      "VacuumPump2_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+      "WashingMachine_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv"
+    ],
+    "raw_rows_read": 1239845,
+    "minute_rows": 111534,
+    "machines": [
+      "ChipPress",
+      "ChipSaw",
+      "HighTemperatureOven",
+      "MainTerminal",
+      "PickAndPlaceUnit",
+      "ScreenPrinter",
+      "SolderingOven",
+      "VacuumOven",
+      "VacuumPump1",
+      "VacuumPump2",
+      "WashingMachine"
+    ],
+    "timestamp_start": "2017-10-22 22:00:00+00:00",
+    "timestamp_end": "2017-10-29 22:59:00+00:00",
+    "target": "next-minute mean active power (P_kW)",
+    "source_has_fault_labels": false
+  },
+  "feature_columns": [
+    "power_kw",
+    "F_Hz",
+    "IAVR_A",
+    "UAVR_V",
+    "power_kw_std",
+    "reading_count",
+    "hour_sin",
+    "hour_cos",
+    "power_lag_1",
+    "power_lag_2",
+    "power_lag_5",
+    "power_roll_mean_5",
+    "Machine"
+  ],
+  "split": {
+    "strategy": "strict chronological 70/15/15 by timestamp; no future rows enter training",
+    "validation_start": "2017-10-27 20:17:00+00:00",
+    "test_start": "2017-10-28 21:38:00+00:00",
+    "train_rows": 78056,
+    "validation_rows": 16731,
+    "test_rows": 16731
+  },
+  "validation": {
+    "mae_kw": 0.07747503161564946,
+    "rmse_kw": 0.4427807273191581
+  },
+  "test": {
+    "mae_kw": 0.06167533630899645,
+    "rmse_kw": 0.34060709395688227
+  },
+  "label_note": "This dataset has no fault labels; scores measure next-minute power prediction only."
+}

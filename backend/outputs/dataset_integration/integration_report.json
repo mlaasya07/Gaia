@@ -1,0 +1,21 @@
+{
+  "status": "completed",
+  "integration": "five dataset adapters -> role-specific agent evidence",
+  "dataset_count": 5,
+  "evidence_rows": 16,
+  "outputs": [
+    "agent_evidence.csv",
+    "agent_context.json",
+    "future_factories_agent_predictions.csv",
+    "hipe_energy_agent_hourly_forecasts.csv",
+    "smart_manufacturing_monitoring_agent_scores.csv"
+  ],
+  "important_boundary": "This creates real-dataset evidence for agent roles. The current learned LACD checkpoint was trained in FactorySim and is not automatically validated or retrained on these heterogeneous real datasets.",
+  "dataset_caveats": [
+    "ZeMA predicted class IDs are not translated into fault severity without verified class semantics.",
+    "Future Factories assembly classes are not treated as throughput labels.",
+    "HIPE forecasts power, not carbon intensity or energy price.",
+    "Smart Manufacturing flags unsupervised anomalies; it has no ground-truth fault labels.",
+    "Semiconductor tables are static metadata, not live observations."
+  ]
+}

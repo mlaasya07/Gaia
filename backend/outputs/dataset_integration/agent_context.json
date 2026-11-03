@@ -1,0 +1,385 @@
+{
+  "schema_version": "1.0",
+  "integration_type": "role_specific_dataset_evidence",
+  "agents": {
+    "maintenance": {
+      "dataset": "ZeMA",
+      "task": "component-condition classification",
+      "rows_scored": 2205,
+      "targets": {
+        "cooler_condition": {
+          "predicted_class_counts": {
+            "100.0": 741,
+            "3.0": 733,
+            "20.0": 731
+          },
+          "mean_max_class_probability": 0.9935149538803032
+        },
+        "valve_condition": {
+          "predicted_class_counts": {
+            "100.0": 1132,
+            "73.0": 379,
+            "80.0": 351,
+            "90.0": 343
+          },
+          "mean_max_class_probability": 0.8909830870881933
+        },
+        "pump_leakage": {
+          "predicted_class_counts": {
+            "0.0": 1221,
+            "2.0": 492,
+            "1.0": 492
+          },
+          "mean_max_class_probability": 0.9908586552271552
+        },
+        "accumulator_pressure": {
+          "predicted_class_counts": {
+            "90.0": 808,
+            "130.0": 637,
+            "100.0": 399,
+            "115.0": 361
+          },
+          "mean_max_class_probability": 0.9474966786744649
+        }
+      }
+    },
+    "scheduling": {
+      "dataset": "Future Factories",
+      "task": "assembly-description classification",
+      "rows_scored": 10000,
+      "predicted_class_counts": {
+        "NoNose": 3776,
+        "NoNose,NoBody2,NoBody1": 3270,
+        "NoNose,NoBody2": 2954
+      },
+      "mean_max_class_probability": 0.9675576790087925,
+      "dataset_metadata": {
+        "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\archive (15).zip",
+        "source_files": [
+          "Analog Dataset/Conveyor_Signals.csv",
+          "Analog Dataset/FFCell_CycleManagement.csv",
+          "Analog Dataset/FFCell_SafetyManagement.csv",
+          "Analog Dataset/R01_Data.csv",
+          "Analog Dataset/R02_Data.csv",
+          "Analog Dataset/R03_Data.csv",
+          "Analog Dataset/R04_Data.csv"
+        ],
+        "rows_total": 974836,
+        "rows_labeled": 492728,
+        "rows_unlabeled": 482108,
+        "rows_used": 10000,
+        "features": 230,
+        "class_counts": {
+          "NoNose": 177711,
+          "NoNose,NoBody2": 153851,
+          "NoNose,NoBody2,NoBody1": 161166
+        },
+        "timestamp_start": "2023-12-11 13:04:12.348000+00:00",
+        "timestamp_end": "2023-12-12 18:07:42.283000+00:00",
+        "join_validation": "exact _time and Description match for each source file",
+        "split_group_rows": 8192,
+        "window_size": 5
+      }
+    },
+    "energy": {
+      "dataset": "HIPE",
+      "task": "one-minute-ahead active-power forecasting",
+      "rows_scored": 111534,
+      "machines": 11,
+      "mean_predicted_power_kw": 1.5158065452638505,
+      "p95_predicted_power_kw": 11.259589893251283,
+      "hourly_output": "hipe_energy_agent_hourly_forecasts.csv",
+      "dataset_metadata": {
+        "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\hipe_cleaned_v1.0.1_geq_2017-10-23_lt_2017-10-30.zip",
+        "source_files": [
+          "ChipPress_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "ChipSaw_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "HighTemperatureOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "MainTerminal_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "PickAndPlaceUnit_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+          "ScreenPrinter_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+          "SolderingOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "VacuumOven_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "VacuumPump1_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv",
+          "VacuumPump2_PhaseCount_2_geq_2017-10-23_lt_2017-10-30.csv",
+          "WashingMachine_PhaseCount_3_geq_2017-10-23_lt_2017-10-30.csv"
+        ],
+        "raw_rows_read": 1239845,
+        "minute_rows": 111534,
+        "machines": [
+          "ChipPress",
+          "ChipSaw",
+          "HighTemperatureOven",
+          "MainTerminal",
+          "PickAndPlaceUnit",
+          "ScreenPrinter",
+          "SolderingOven",
+          "VacuumOven",
+          "VacuumPump1",
+          "VacuumPump2",
+          "WashingMachine"
+        ],
+        "timestamp_start": "2017-10-22 22:00:00+00:00",
+        "timestamp_end": "2017-10-29 22:59:00+00:00",
+        "target": "next-minute mean active power (P_kW)",
+        "source_has_fault_labels": false
+      }
+    },
+    "monitoring": {
+      "dataset": "Smart Manufacturing",
+      "task": "unsupervised operational anomaly screening",
+      "minute_rows_scored": 1143,
+      "screened_minutes": 26,
+      "screened_fraction": 0.022747156605424323,
+      "threshold": 0.09491031413557768,
+      "scores_file": "smart_manufacturing_monitoring_agent_scores.csv",
+      "dataset_metadata": {
+        "source": "C:\\Users\\chait\\Downloads\\Gaia_Paper_Aligned_Project\\Gaia-Code\\Dataset\\Smart-Manufacturing-Dataset-0.1.0.zip",
+        "nested_archive": "uwicore-Smart-Manufacturing-Dataset-cffb0ac/Smart-Manufacturing-Dataset.zip",
+        "source_files": {
+          "data_communications.csv": {
+            "rows": 12757920,
+            "bytes": 1282317658
+          },
+          "data_position.csv": {
+            "rows": 832930,
+            "bytes": 74716781
+          },
+          "data_states.csv": {
+            "rows": 213056,
+            "bytes": 8853777
+          }
+        },
+        "minute_rows": 1143,
+        "timestamp_start_seconds": 0,
+        "timestamp_end_seconds": 68520,
+        "message_latency_is_requirement_not_observed_latency": true,
+        "labels_available": false
+      }
+    },
+    "process_context": {
+      "dataset": "Semiconductor process metadata",
+      "task": "static route/machine/process context",
+      "tables": {
+        "machineinfo": {
+          "rows": 100,
+          "columns": [
+            "Machine",
+            "MachineType",
+            "MachineGroup",
+            "Location"
+          ],
+          "sample": [
+            {
+              "Machine": "M1",
+              "MachineType": "CMP",
+              "MachineGroup": "CMP1",
+              "Location": "Bay1"
+            },
+            {
+              "Machine": "M2",
+              "MachineType": "CMP",
+              "MachineGroup": "CMP1",
+              "Location": "Bay1"
+            },
+            {
+              "Machine": "M3",
+              "MachineType": "CMP",
+              "MachineGroup": "CMP1",
+              "Location": "Bay1"
+            }
+          ]
+        },
+        "machinetypeinfo": {
+          "rows": 6,
+          "columns": [
+            "MachineType",
+            "WIPLimit(lot)",
+            "DurationLimit(min)",
+            "WIPAllocationRule",
+            "DispatchingRule"
+          ],
+          "sample": [
+            {
+              "MachineType": "CMP",
+              "WIPLimit(lot)": 100,
+              "DurationLimit(min)": 4000,
+              "WIPAllocationRule": "MW",
+              "DispatchingRule": "CLOSE"
+            },
+            {
+              "MachineType": "PHOTO",
+              "WIPLimit(lot)": 150,
+              "DurationLimit(min)": 8000,
+              "WIPAllocationRule": "MW",
+              "DispatchingRule": "CLOSE"
+            },
+            {
+              "MachineType": "ETCH",
+              "WIPLimit(lot)": 150,
+              "DurationLimit(min)": 2500,
+              "WIPAllocationRule": "MW",
+              "DispatchingRule": "CLOSE"
+            }
+          ]
+        },
+        "processstepinfo": {
+          "rows": 40,
+          "columns": [
+            "No",
+            "MachineType",
+            "ProcessingTimeAvg(sec)",
+            "ProcessingTimeSD",
+            "ProcessingTimeMinimum(sec)",
+            "SkipProbabilityOfMetrology"
+          ],
+          "sample": [
+            {
+              "No": 1,
+              "MachineType": "CMP",
+              "ProcessingTimeAvg(sec)": 286,
+              "ProcessingTimeSD": 29,
+              "ProcessingTimeMinimum(sec)": 210,
+              "SkipProbabilityOfMetrology": 0.0
+            },
+            {
+              "No": 2,
+              "MachineType": "CVD",
+              "ProcessingTimeAvg(sec)": 815,
+              "ProcessingTimeSD": 133,
+              "ProcessingTimeMinimum(sec)": 120,
+              "SkipProbabilityOfMetrology": 0.0
+            },
+            {
+              "No": 3,
+              "MachineType": "PHOTO",
+              "ProcessingTimeAvg(sec)": 350,
+              "ProcessingTimeSD": 120,
+              "ProcessingTimeMinimum(sec)": 152,
+              "SkipProbabilityOfMetrology": 0.0
+            }
+          ]
+        },
+        "storagealtlist": {
+          "rows": 75,
+          "columns": [
+            "MachineType",
+            "TargetBay",
+            "Sequence",
+            "StorageName"
+          ],
+          "sample": [
+            {
+              "MachineType": "CMP",
+              "TargetBay": "Bay1",
+              "Sequence": 1,
+              "StorageName": "S1"
+            },
+            {
+              "MachineType": "CMP",
+              "TargetBay": "Bay1",
+              "Sequence": 2,
+              "StorageName": "S2"
+            },
+            {
+              "MachineType": "CMP",
+              "TargetBay": "Bay1",
+              "Sequence": 3,
+              "StorageName": "S3"
+            }
+          ]
+        },
+        "storageinfo": {
+          "rows": 5,
+          "columns": [
+            "Storage",
+            "Shelves"
+          ],
+          "sample": [
+            {
+              "Storage": "S1",
+              "Shelves": 200
+            },
+            {
+              "Storage": "S2",
+              "Shelves": 100
+            },
+            {
+              "Storage": "S3",
+              "Shelves": 50
+            }
+          ]
+        },
+        "traveltimeinfo": {
+          "rows": 25,
+          "columns": [
+            "FromBay",
+            "ToBay",
+            "TravelTimeAvg(sec)",
+            "TraveTimeSD",
+            "TraveTimeMin(sec)"
+          ],
+          "sample": [
+            {
+              "FromBay": "Bay1",
+              "ToBay": "Bay1",
+              "TravelTimeAvg(sec)": 68,
+              "TraveTimeSD": 15,
+              "TraveTimeMin(sec)": 45
+            },
+            {
+              "FromBay": "Bay1",
+              "ToBay": "Bay2",
+              "TravelTimeAvg(sec)": 118,
+              "TraveTimeSD": 20,
+              "TraveTimeMin(sec)": 69
+            },
+            {
+              "FromBay": "Bay1",
+              "ToBay": "Bay3",
+              "TravelTimeAvg(sec)": 182,
+              "TraveTimeSD": 20,
+              "TraveTimeMin(sec)": 121
+            }
+          ]
+        }
+      },
+      "machine_records": 100,
+      "process_step_records": 40
+    }
+  },
+  "sources": {
+    "ZeMA": {
+      "source": "data.zip",
+      "feature_rows": 2205,
+      "features": 119
+    },
+    "Future Factories": {
+      "archive": "archive (15).zip",
+      "rows_scored": 10000,
+      "features": 230,
+      "rows_total": 974836
+    },
+    "HIPE": {
+      "archive": "hipe_cleaned_v1.0.1_geq_2017-10-23_lt_2017-10-30.zip",
+      "minute_rows": 111534,
+      "machines": 11
+    },
+    "Smart Manufacturing": {
+      "archive": "Smart-Manufacturing-Dataset-0.1.0.zip",
+      "minute_rows": 1143,
+      "labels_available": false
+    },
+    "Semiconductor metadata": {
+      "archive": "dataset.zip",
+      "tables": {
+        "machineinfo": 100,
+        "machinetypeinfo": 6,
+        "processstepinfo": 40,
+        "storagealtlist": 75,
+        "storageinfo": 5,
+        "traveltimeinfo": 25
+      }
+    }
+  }
+}

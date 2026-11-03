@@ -1,0 +1,14 @@
+data/raw/*
+data/processed/*
+# keep small result files (metrics, summaries, pretrained LACD weights); ignore model binaries
+outputs/**/*.joblib
+outputs/**/*.pt
+models/*
+.venv/
+__pycache__/
+*.pyc
+
+# exception: small trained checkpoints the research export depends on (<300 KB each)
+!outputs/lacd_learning/lacd_policy.pt
+!outputs/lacd_learning_realdata/lacd_policy.pt
+!outputs/simulation/shared_world_model.pt
